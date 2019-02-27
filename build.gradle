@@ -10,3 +10,10 @@ dependencies {
     compile 'com.google.guava:guava:23.0'
     testCompile 'junit:junit:4.12'
 }
+
+task npmInstall(type: NpmTask) {
+    configureNode
+    inputs.file('package.json')
+    outputs.upToDateWhen { file('node_modules').exists() }
+    npmCommand = ['install']
+}
