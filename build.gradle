@@ -15,9 +15,3 @@ task npmInstall(type: Exec) {
     commandLine "npm", "install"
 }
 
-task npmInstall1(type: NpmTask) {
-    
-    inputs.file('package.json')
-    outputs.upToDateWhen { file('node_modules').exists() }
-    npmCommand = ['install']
-}
