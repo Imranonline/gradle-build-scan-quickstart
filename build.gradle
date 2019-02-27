@@ -11,8 +11,12 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-task npmInstall(type: NpmTask) {
-    configureNode
+task npmInstall(type: Exec) {
+    commandLine "npm", "install"
+}
+
+task npmInstall1(type: NpmTask) {
+    
     inputs.file('package.json')
     outputs.upToDateWhen { file('node_modules').exists() }
     npmCommand = ['install']
