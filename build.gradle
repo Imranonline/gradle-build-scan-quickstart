@@ -14,7 +14,7 @@ dependencies {
 
 
 task npmInstall(type: Exec) {
-  inputs.file('src\package.json')
+  inputs.file('src/package.json')
     outputs.upToDateWhen { file('node_modules').exists() }
  commandLine "npm.cmd", "install"
 }
