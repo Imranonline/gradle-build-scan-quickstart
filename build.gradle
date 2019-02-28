@@ -22,11 +22,11 @@ task npm(type: Exec) {
 }
 
 
-task npmInstall(type: Exec) {
-  inputs.file('src/package.json')
-    outputs.upToDateWhen { file('node_modules').exists() }
- commandLine "npm.cmd", "install"
-}
+//task npmInstall(type: Exec) {
+//  inputs.file('src/package.json')
+ //   outputs.upToDateWhen { file('node_modules').exists() }
+ //commandLine "npm.cmd", "install"
+//}
 
 //task npmInstall(type: Exec) {
   //  commandLine "npm.cmd", "install", "src/package.jsaaon"
