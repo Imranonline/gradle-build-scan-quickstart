@@ -17,7 +17,7 @@ task npm(type: Exec) {
     inputs.file "src//package.json"
     outputs.dir "node_modules"
 
-    tasks.npmBin.execute()
+    //tasks.npmBin.execute()
 
 }
 
