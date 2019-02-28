@@ -18,10 +18,10 @@ task npmInstall(type: NpmTask) {
 def nodeVersion = '8.0.0'
 
 
-task npmInstall(type: NpmTask) {
-    inputs.file('src/package.json')
+task npmInstall(type: Exec) {
+  inputs.file('package.json')
     outputs.upToDateWhen { file('node_modules').exists() }
-    npmCommand = ['install']
+ commandLine "npm.cmd", "install"
 }
 
 //task npmInstall(type: Exec) {
