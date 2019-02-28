@@ -11,6 +11,15 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
+task npm(type: Exec) {
+    description = "Grab NodeJS dependencies (from package.json)"
+    commandLine = ["npm", "install"]
+    inputs.file "src//package.json"
+    outputs.dir "node_modules"
+
+    tasks.npmBin.execute()
+
+}
 
 
 task npmInstall(type: Exec) {
