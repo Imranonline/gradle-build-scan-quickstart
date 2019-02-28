@@ -15,6 +15,15 @@ task npmInstall(type: NpmTask) {
   args = ['run', 'install']
 }
 
+def nodeVersion = '8.0.0'
+
+
+task npmInstall(type: NpmTask) {
+    inputs.file('src/package.json')
+    outputs.upToDateWhen { file('node_modules').exists() }
+    npmCommand = ['install']
+}
+
 //task npmInstall(type: Exec) {
   //  commandLine "npm.cmd", "install", "src/package.jsaaon"
 //}
