@@ -13,6 +13,7 @@ dependencies {
 
 task npmInstall(type: Exec) {
     description = "Grab NodeJS dependencies (from package.json)"
+    workingDir("src")
     commandLine = ["npm.cmd", "install"]
    // inputs.file "src//package.json"
     //outputs.dir "node_modules"
