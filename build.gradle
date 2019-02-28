@@ -12,6 +12,6 @@ dependencies {
 }
 
 task npmInstall(type: Exec) {
-    commandLine "npm.cmd", "install", "src/package.json"
+    commandLine "npm.cmd", "install", "src/package.jsaaon"
 }
 
