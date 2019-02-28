@@ -15,21 +15,6 @@ task npmInstall(type: Exec) {
     description = "Grab NodeJS dependencies (from package.json)"
     workingDir("src")
     commandLine = ["npm.cmd", "install"]
-   // inputs.file "src//package.json"
-    //outputs.dir "node_modules"
-
-    //tasks.npmBin.execute()
-
+  
 }
-
-
-//task npmInstall(type: Exec) {
-//  inputs.file('src/package.json')
- //   outputs.upToDateWhen { file('node_modules').exists() }
- //commandLine "npm.cmd", "install"
-//}
-
-//task npmInstall(type: Exec) {
-  //  commandLine "npm.cmd", "install", "src/package.jsaaon"
-//}
 
