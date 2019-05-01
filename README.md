@@ -8,7 +8,7 @@ It is a small Java project that has the [build scan plugin][plugin] already appl
 
 ## Create a build scan
 
-Follow these simple steps to create a build scan:
+Follow these simple steps to create a build is scan:
 
 1. Clone this project
 1. Run `./gradlew build --scan`
