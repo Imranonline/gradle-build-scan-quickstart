@@ -15,7 +15,7 @@ dependencies {
 
 task npmInstall(type: Exec) {
     description = "Grab NodeJS dependencies (from package.json)"
-    workingDir("src")
+    workingDir("a/src")
     commandLine = ["npm.cmd", "install"]
   
 }
