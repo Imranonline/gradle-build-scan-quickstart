@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+    
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.google.guava:guava:23.0'
+    testCompile 'junit:junit:4.12'
+}
+
+task npmInstall(type: Exec) {
+    description = "Grab NodeJS dependencies (from package.json)"
+    workingDir("src")
+    commandLine = ["npm.cmd", "install"]
+  
+}
