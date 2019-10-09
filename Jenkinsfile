@@ -1,30 +1,38 @@
-pipeline {
+pipeline{
     agent any
+
     stages {
-        stage ('Checkout SCM') {
-               steps{
-                   echo "Running Checkout Phase"
-               }
-        }
 
-        stage ('Build') {
-               
-                steps{
-                   echo "Running Build "
-               }
-        }
+            stage ('Checkout'){
+                    steps    {
+                             echo "Running Checkout Phase"
+                             git 'https://github.com/Imranonline/gradle-build-scan-quickstart.git'
+                    }
 
-        stage ('Test') {
-                steps{
-                   echo "Running Testing Phase"
-               }
-        }
+            }
 
-        stage ('Deploy') {
+            stage ('Build') {
                 steps{
-                   echo "Deploying..."
-                   
-               }
-        }
+                    sh './gradlew build --scan'
+                }
+            }
+
+            stage ('Test') {
+                steps {
+                    echo 'Testing the stage completed see results '
+                }
+            }
+
+                stage ('Deploy') {
+                    when {
+                        branch 'master'
+                    }
+                steps {
+                    echo 'Testing the stage completed see results '
+                }
+            }
+
     }
+
+
 }
