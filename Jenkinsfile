@@ -11,6 +11,23 @@ pipeline{
 
             }
 
+            	stage('Parallel Stage') {
+		 parallel {
+                stage('Branch A') {
+                    
+                    steps {
+                        echo "On Branch A"
+                    }
+                }
+                stage('Branch B') {
+                    steps {
+                        echo "On Branch B"
+                    }
+                }
+				}
+		
+ }
+        
             stage ('Build') {
                 steps{
                     sh './gradlew build --scan'
