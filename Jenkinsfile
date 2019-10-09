@@ -27,6 +27,15 @@ pipeline{
                     when {
                         branch 'master'
                     }
+                    input {
+                message "Deploy to Prod ?"
+                ok "Yes, we should."
+                submitter "admin,imran"
+                parameters {
+                    string(name: 'COMMENT', defaultValue: 'Merged PR to Master', description: 'I have Merged the PR to Master')
+                }
+            }
+                    
                 steps {
                     echo 'Testing the stage completed see results '
                 }
